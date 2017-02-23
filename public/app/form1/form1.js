@@ -4,7 +4,7 @@ angular.module('myApp.form1', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/form1', {
-            templateUrl: '/form1.html',
+            templateUrl: 'form1/form1.html',
             controller: 'Form1Ctrl'
         });
     }])
