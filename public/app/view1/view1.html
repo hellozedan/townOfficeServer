@@ -1,0 +1,145 @@
+<div class="container search-box">
+    <h2>חיפוש טפסים</h2>
+    <div class="row">
+        <div class="col-lg-12 ">
+            <div class="row">
+
+                <div class=" col-xs-2">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="goSearchBy()"><span
+                            class="glyphicon glyphicon-search"></span></button>
+                </span>
+
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="clearSearch()"><span
+                            class="glyphicon glyphicon-repeat"></span></button>
+                </span>
+                </div>
+
+
+                <div class=" col-xs-2">
+                    <select ng-model="query.type" class="form-control">
+                        <option value="none" selected disabled> סוג טופס
+                        </option>
+                        <option value="water">רשת מים
+                        </option>
+                        <option value="sewerage">רשת ביוב
+                        </option>
+                    </select>
+                </div>
+
+                <div class=" col-xs-2">
+                    <input type="text" class="form-control" name="x" placeholder="מגרש" ng-model="query.megrash">
+                </div>
+
+                <div class=" col-xs-2">
+                    <input type="text" class="form-control" name="x" placeholder="חלקה" ng-model="query.helka">
+                </div>
+                <div class=" col-xs-2">
+                    <input type="text" class="form-control" name="x" placeholder="גוש" ng-model="query.gosh">
+                </div>
+                <div class=" col-xs-2">
+                    <input type="text" class="form-control" name="x" placeholder="שם" ng-model="query.name">
+                </div>
+
+                <input type="hidden" name="search_param" value="all" id="search_param">
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <h2>רשימת טפסים</h2>
+
+    <h3 ng-if=" forms_list.length==0">
+
+                       0 תוצאות
+    </h3>
+
+    <section class="content" style="width: 50%; background:rgba(139, 139, 139, 0.2)" ng-if=" forms_list.length>=0">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- The time line -->
+                <ul class="timeline">
+
+
+
+                    <li ng-repeat="form in forms_list" ng-click="OpenForm(form._id)" class="item-in-search clickable">
+
+                        <div class="timeline-item">
+                            <h3 class="timeline-header"><a href="http://kmitsolutions.com" target="_blank">
+                                לכבוד: {{form.name}} </a>
+
+
+                            </h3>
+                            <div class="timeline-body">
+
+
+                                <table>
+                                    <tr>
+                                        <div>
+                                            <td><img src="components/images/form.png" class=" img-lg"></td>
+                                        </div>
+                                        <td>
+                                            <ul>
+                                                <bold>
+                                                    <li>תאריך : {{form.date | date:"MM/dd/yyyy"}}</li>
+                                                    <li>גוש : {{form.gosh}}</li>
+                                                    <li>חלקה : {{form.helka}}</li>
+                                                    <li>מגרש : {{form.megrash}}</li>
+                                                </bold>
+
+                                            </ul>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+                        <i class="fa fa-arrows bg-gray"></i>
+                    </li>
+                </ul>
+            </div><!-- /.col -->
+        </div>
+
+
+    </section><!-- /.content -->
+
+
+    <!--
+        <div class="item-in-search clickable" ng-repeat="form in forms_list" ng-click="OpenForm(form._id)">
+
+            <span class="glyphicon glyphicon-book"></span>
+            <span style="font-weight: bold">{{form.name}}
+            </span>
+            <br>
+            <span>
+        גוש
+            {{form.gosh}}
+                </span>
+            &nbsp; &nbsp;
+            <span>
+          &#45;&#45;  חלקה
+            {{form.helka}}
+                </span>
+            &nbsp; &nbsp;
+            <span>
+            &#45;&#45;מגרש
+            {{form.megrash}}
+    </span>
+
+        </div>-->
+
+</div>
+
+

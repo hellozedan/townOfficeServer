@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<script type="text/javascript" src="libs/png_support/zlib.js"></script>
+  <meta charset="utf-8">
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title class=".no-print"> Town Forms</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_componentss/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_componentss/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_componentss/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="components/style.css">
+  <link href="bower_componentss/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="bower_componentss/ng-notify/dist/ng-notify.min.css" rel="stylesheet" />
+
+
+</head>
+<body dir="rtl">
+<div ng-controller="navController">
+<nav class="navbar navbar-inverse no-print" ng-if="UserDetails && UserDetails.isAdmin">
+  <div class="container-fluid">
+
+    <ul class="nav navbar-nav">
+
+      <li class="clickable" ng-click="logout()"><a ><span class="glyphicon glyphicon-log-out"></span> יציאה</a></li>
+
+
+    </ul>
+    <div class="navbar-header navbar-right">
+      <a class="navbar-brand" href="#">
+
+        מועצה מקומית כפר יאסיף
+      </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right" dir="rtl">
+
+      !--<li class="dropdown clickable"><a class="dropdown-toggle" data-toggle="dropdown" >טופס חדש <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#!/form1">
+          אישור חיובי רשת מים
+        </a></li>
+        <li><a href="#!/form2">
+          אישור חיובי רשת ביוב
+        </a></li>
+
+      </ul>
+    </li>-->
+      <li ><a href="#view1">ראשי</a></li>
+    </ul>
+
+  </div>
+</nav>
+</div>
+
+
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+  <!--<div>Angular seed app: v<span app-version></span></div>-->
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_componentss/jquery/dist/jquery.js"></script>
+  <script src="bower_componentss/angular/angular.js"></script>
+  <script src="bower_componentss/angular-route/angular-route.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+
+
+
+<script type="text/javascript" src="libs/png_support/zlib.js"></script>
+  <script type="text/javascript" src="libs/png_support/png.js"></script>
+  <script type="text/javascript" src="plugins/addimage.js"></script>
+  <script type="text/javascript" src="plugins/png_support.js"></script>
+  <script src="bower_componentss/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_componentss/ng-notify/dist/ng-notify.min.js"></script>
+
+
+
+<!--app-->
+<script src="app.js"></script>
+<!--controllers-->
+<script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script>
+<script src="form1/form1.js"></script>
+<script src="form2/form2.js"></script>
+<script src="view_form/view_form.js"></script>
+<script src="login/login.js"></script>
+
+<!--services-->
+<script src="services/forms_service.js"></script>
+<script src="services/user_service.js"></script>
+
+</body>
+</html>
