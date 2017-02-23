@@ -33,15 +33,15 @@ module.exports = function (FormDetails) {
         create : function (req, res) {
 
             var form = new FormDetails(req.body);
-                form.save(function (e) {
-                    if (e) {
-                        console.log('error: ' + e);
-                        res.status(400).json(err);
-                    } else {
-                        console.log('no error');
-                        res.status(201).json(form);
-                    }
-                });
+            form.save(function (e) {
+                if (e) {
+                    console.log('error: ' + e);
+                    res.status(400).json(err);
+                } else {
+                    console.log('no error');
+                    res.status(201).json(form);
+                }
+            });
 
 
 
@@ -75,11 +75,11 @@ module.exports = function (FormDetails) {
             if(req.query.name){
                 query.name= { "$regex": req.query.name, "$options": "i" };
             }
-             if(req.query.gosh){
+            if(req.query.gosh){
                 query.gosh={ "$regex": req.query.gosh, "$options": "i" };
             }
 
-           if(req.query.helka){
+            if(req.query.helka){
                 query.helka={ "$regex":  req.query.helka, "$options": "i" };
 
             }
@@ -87,8 +87,22 @@ module.exports = function (FormDetails) {
             if(req.query.megrash){
                 query.megrash= { "$regex": req.query.megrash, "$options": "i" };
             }
+            if(req.query.type){
+                query.type= req.query.type;
+            }
 
             FormDetails.find(query).sort({'create_date': 'descending'}).exec(query, function (err, docs) {
+                if (err) {
+                    console.log(err);
+                    res.status(500).json(err);
+                } else {
+                    res.status(200).json(docs);
+                }
+            });
+        },
+        getLast10Forms: function (req, res) {
+            var query={};
+            FormDetails.find(query).sort({'create_date': 'descending'}).limit(10).exec(query, function (err, docs) {
                 if (err) {
                     console.log(err);
                     res.status(500).json(err);

@@ -12,6 +12,6 @@ module.exports = function(FormDetails) {
     router.get('/getAllForms', controller.getAllForms);
     router.get('/getFormByID', controller.getFormByID);
     router.get('/getFormByQuery', controller.getFormByQuery);
-
+    router.get('/getLast10Forms', controller.getLast10Forms);
     return router;
 }
