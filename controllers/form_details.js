@@ -73,7 +73,7 @@ module.exports = function (FormDetails) {
         getFormByQuery: function (req, res) {
             var query={};
             if(req.query.name){
-                query.name= { "$regex": req.query.name, "$options": "i" };
+                query.name={ "$regex": req.query.gosh, "$options": "i" };
             }
             if(req.query.gosh){
                 query.gosh={ "$regex": req.query.gosh, "$options": "i" };
@@ -110,6 +110,17 @@ module.exports = function (FormDetails) {
                     res.status(200).json(docs);
                 }
             });
+        },
+
+        deleteFormById: function (req, res) {
+            FormDetails.remove({_id:req.query._id},function (e) {
+                if (e) {
+                    console.log('error: ' + e);
+                    res.status(500).json(e);
+                } else {
+                    res.status(201).json("deleted");
+                }
+            })
         }
 
 

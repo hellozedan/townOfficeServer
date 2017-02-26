@@ -221,3 +221,16 @@ textarea {
 }
 
 
+.delete-form{
+    float: left;
+    margin-left: 130px;
+    margin-top: 19px;
+}
+
+
+.logo-habib{
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+    margin-left: 10px !important;
+
+}

@@ -10,6 +10,7 @@ module.exports = function(FormDetails) {
     router.post('/create', controller.create);
     router.post('/edit', controller.edit);
     router.get('/getAllForms', controller.getAllForms);
+    router.get('/deleteFormById', controller.deleteFormById);
     router.get('/getFormByID', controller.getFormByID);
     router.get('/getFormByQuery', controller.getFormByQuery);
     router.get('/getLast10Forms', controller.getLast10Forms);

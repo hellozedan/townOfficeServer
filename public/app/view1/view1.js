@@ -26,15 +26,17 @@ function View1Ctrl($scope,FormDetailsService,ngNotify,UserDetailsService){
     $scope.query.helka="";
     $scope.query.megrash="";
     $scope.query.name="";
-
-
-    FormDetailsService.getLast10Forms().then(function (result) {
-            if (result != null) {
-                $scope.forms_list = result;
+$scope.RefreshList=function(){
+        FormDetailsService.getLast10Forms().then(function (result) {
+                if (result != null) {
+                    $scope.forms_list = result;
+                }
+            }, function (err) {
             }
-        }, function (err) {
-        }
-    );
+        );
+    }
+
+
 
     $scope.goSearchBy=function () {
 
@@ -62,8 +64,38 @@ function View1Ctrl($scope,FormDetailsService,ngNotify,UserDetailsService){
     }
 
 
-    $scope.OpenForm=function(_id){
-        var url="#!/view_form?";
+    $scope.OpenForm=function(type,_id){
+        if(type=='water'){
+            var url="#!/view_form?";
+        }else{
+            var url="#!/view_form2?";
+        }
         window.open(url+"id="+_id);
     }
+    $scope.deleteFormById=function(_id){
+
+        swal({
+                title: "האם אתה בטוח?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonText: "כן, תמחק את הטופס",
+                cancelButtonText:'ביטול',
+                confirmButtonColor: "#DD6B55",
+
+                closeOnConfirm: false
+            },
+            function(){
+                FormDetailsService.deleteFormById(_id).then(function (result) {
+                        swal("נמחק!", "'טופס אישור נמחק", "success")
+                        $scope.RefreshList();
+                    }, function (err) {
+                    }
+                );
+
+            });
+// are you sure
+
+    }
+
+    $scope.RefreshList();
 };

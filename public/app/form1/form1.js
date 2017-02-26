@@ -15,7 +15,7 @@ function Form1Ctrl($scope,FormDetailsService,ngNotify,UserDetailsService) {
     UserDetailsService.ReloadPage();
     $scope.form1 = {};
     $scope.form1.date = new Date();
-    $scope.form1.name="";
+    $scope.form1.name="תאגיד העין";
 
 
     $scope.printPage = function () {

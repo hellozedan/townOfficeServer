@@ -7,6 +7,7 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.view_form',
+  'myApp.view_form2',
   'myApp.version',
   'myApp.form1',
   'myApp.form2',

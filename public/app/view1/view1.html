@@ -119,10 +119,15 @@
     </section>--><!-- /.content -->
 
 <div >
-        <div class="item-in-search clickable"  ng-repeat="form in forms_list" ng-click="OpenForm(form._id)">
+
+    <div   ng-repeat="form in forms_list" >
+        <button type="button" class="btn btn-danger delete-form" style="float: left" ng-click="deleteFormById(form._id)"><span
+                class="glyphicon glyphicon-minus"></span></button>
+
+        <div class="item-in-search clickable" ng-click="OpenForm(form.type,form._id)" >
 
             <span class="glyphicon glyphicon-book"></span>
-            <span style="font-weight: bold; font-size:17px ">{{form.name}}
+            <span style="font-weight: bold; font-size:17px ">{{form.table_details[0].col1}}
             </span>
 
             <span style="font-weight: bold; font-size:13px; float: left;">{{form.date | date:"MM/dd/yyyy"}}
@@ -143,7 +148,11 @@
             {{form.megrash}}
     </span>
 
+
         </div>
+
+
+</div>
 </div>
 
 </div>
