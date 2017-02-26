@@ -7,6 +7,7 @@ var form_details = new mongoose.Schema({
 
     order: Number,
     type: { type: String},
+    type_he: { type: String},
     active: {type:Boolean, default:true},
     gosh:{type:String},
     helka:{type:String},

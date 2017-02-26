@@ -82,6 +82,7 @@ function Form1Ctrl($scope,FormDetailsService,ngNotify) {
 
     $scope.saveForm=function () {
         $scope.form1.type="water";
+        $scope.form1.type_he="מים";
         FormDetailsService.create($scope.form1).then(function (result) {
             ngNotify.set('הטופס נשמר בצלחה', 'success');
             }, function (err) {
