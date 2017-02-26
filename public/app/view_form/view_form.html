@@ -31,7 +31,9 @@
 
         <div class="dearSir">
             <label>
-                לכבוד : <input class="input-to-form" type="text" ng-model="form1.name" disabled>
+
+                לכבוד : <!--<input class="input-to-form" type="text" ng-model="form1.name" disabled>-->
+                {{form1.name}}
 
             </label>
             <br>
@@ -87,8 +89,9 @@
                 <tbody>
                 <tr ng-repeat="row in form1.table_details" class="row-in-table-view">
 
-                    <td>
-                        <p>
+                    <td >
+
+                        <p >
                             {{row.col1}}
                         </p>
 

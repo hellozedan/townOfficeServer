@@ -13,9 +13,9 @@ angular.module('myApp.view1', ['ngRoute'])
     .controller('View1Ctrl',View1Ctrl );
 
 
-function View1Ctrl($scope,FormDetailsService,ngNotify){
+function View1Ctrl($scope,FormDetailsService,ngNotify,UserDetailsService){
 
-
+    UserDetailsService.ReloadPage();
       $scope.forms_list=[
       ];
 

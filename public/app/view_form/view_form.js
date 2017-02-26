@@ -10,7 +10,8 @@ angular.module('myApp.view_form', ['ngRoute'])
     }])
     .controller('FormViewCtrl', FormViewCtrl);
 
-function FormViewCtrl($scope,FormDetailsService) {
+function FormViewCtrl($scope,FormDetailsService,UserDetailsService) {
+    UserDetailsService.ReloadPage();
 
 
     function getParameterByName(name, url) {

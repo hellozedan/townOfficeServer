@@ -1,17 +1,18 @@
-<div class="container search-box">
-    <h2>חיפוש טפסים</h2>
-    <div class="row">
+<div class="container search-box" >
+    <h2 class="blue">חיפוש טפסים</h2>
+    <br>
+    <div class="row" >
         <div class="col-lg-12 ">
             <div class="row">
 
                 <div class=" col-xs-2">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" ng-click="goSearchBy()"><span
-                            class="glyphicon glyphicon-search"></span></button>
+                    <button class="btn btn-success" type="button" ng-click="goSearchBy()"  title="חיפוש"> &nbsp;&nbsp;<span
+                            class="glyphicon glyphicon-search"> </span>&nbsp;&nbsp;&nbsp;</button>
                 </span>
 
                     <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" ng-click="clearSearch()"><span
+                    <button class="btn btn-default" type="button" ng-click="clearSearch()"  title="ניקוי"><span
                             class="glyphicon glyphicon-repeat"></span></button>
                 </span>
                 </div>
@@ -50,20 +51,22 @@
     </div>
 </div>
 
+<br> <hr>
+<br>
 
-<div>
-    <h2>רשימת טפסים</h2>
+<div class="container">
+    <h2 class="blue">רשימת טפסים</h2>
 
     <h3 ng-if=" forms_list.length==0">
 
                        0 תוצאות
     </h3>
 
-    <section class="content" style="width: 50%; background:rgba(139, 139, 139, 0.2)" ng-if=" forms_list.length>=0">
-        <!-- row -->
+  <!--  <section class="content" style="width: 50%; background:rgba(139, 139, 139, 0.2)" ng-if=" forms_list.length>=0">
+        &lt;!&ndash; row &ndash;&gt;
         <div class="row">
             <div class="col-md-12">
-                <!-- The time line -->
+                &lt;!&ndash; The time line &ndash;&gt;
                 <ul class="timeline">
 
 
@@ -87,7 +90,7 @@
                                         <td>
                                             <ul>
                                                 <bold>
-                                                    <li>תאריך : {{form.date | date:"MM/dd/yyyy"}}</li>
+                                                    <li>תאריך : {{form.date | date:"dd/MM/yyyy"}}</li>
                                                     <li>גוש : {{form.gosh}}</li>
                                                     <li>חלקה : {{form.helka}}</li>
                                                     <li>מגרש : {{form.megrash}}</li>
@@ -109,36 +112,39 @@
                         <i class="fa fa-arrows bg-gray"></i>
                     </li>
                 </ul>
-            </div><!-- /.col -->
+            </div>&lt;!&ndash; /.col &ndash;&gt;
         </div>
 
 
-    </section><!-- /.content -->
+    </section>--><!-- /.content -->
 
-
-    <!--
-        <div class="item-in-search clickable" ng-repeat="form in forms_list" ng-click="OpenForm(form._id)">
+<div >
+        <div class="item-in-search clickable"  ng-repeat="form in forms_list" ng-click="OpenForm(form._id)">
 
             <span class="glyphicon glyphicon-book"></span>
-            <span style="font-weight: bold">{{form.name}}
+            <span style="font-weight: bold; font-size:17px ">{{form.name}}
+            </span>
+
+            <span style="font-weight: bold; font-size:13px; float: left;">{{form.date | date:"MM/dd/yyyy"}}
             </span>
             <br>
             <span>
-        גוש
+         <span class="blue">  גוש</span>
             {{form.gosh}}
                 </span>
             &nbsp; &nbsp;
             <span>
-          &#45;&#45;  חלקה
+            <span class="blue">  חלקה</span>
             {{form.helka}}
                 </span>
             &nbsp; &nbsp;
             <span>
-            &#45;&#45;מגרש
+             <span class="blue">  מגרש</span>
             {{form.megrash}}
     </span>
 
-        </div>-->
+        </div>
+</div>
 
 </div>
 

@@ -10,9 +10,9 @@ angular.module('myApp.form2', ['ngRoute'])
     }])
     .controller('Form2Ctrl', Form1Ctrl);
 
-function Form1Ctrl($scope,FormDetailsService,ngNotify) {
+function Form1Ctrl($scope,FormDetailsService,ngNotify,UserDetailsService) {
 
-
+    UserDetailsService.ReloadPage();
     $scope.form1 = {};
     $scope.form1.date = new Date();
     $scope.form1.name="";

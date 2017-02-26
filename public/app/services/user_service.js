@@ -2,8 +2,8 @@
 
 function UserDetailsService($http, $q) {
 
-   /* var apiBase='https://townoffices.herokuapp.com/api/';*/
-    var  apiBase= 'http://localhost:3000/api/';
+    var apiBase='https://townoffices.herokuapp.com/api/';
+/*    var  apiBase= 'http://localhost:3000/api/';*/
     var userDetails = null;
 
 
@@ -32,11 +32,19 @@ function UserDetailsService($http, $q) {
         return deferred.promise;
     }
 
+    var ReloadPage = function () {
+        var user = GetUserDetails();
+        if (!user || !(user.isAdmin))
+            window.open("#!/login", '_self', false);
+
+
+    }
 
     return ({
         GetUserDetails: GetUserDetails,
         SetUserDetails: SetUserDetails,
-        GetUser:GetUser
+        GetUser:GetUser,
+        ReloadPage:ReloadPage
     });
 
 }
