@@ -74,6 +74,21 @@ $scope.RefreshList=function(){
     }
     $scope.deleteFormById=function(_id){
 
+
+        if (confirm('האם אתה בטוח?')) {
+            FormDetailsService.deleteFormById(_id).then(function (result) {
+                 /*   swal("נמחק!", "'טופס אישור נמחק", "success");*/
+                    ngNotify.set('הטופס נמחק בהצלחה', 'success');
+                    $scope.RefreshList();
+                }, function (err) {
+                }
+            );
+
+            // Save it!
+        } else {
+            // Do nothing!
+        }
+/*
         swal({
                 title: "האם אתה בטוח?",
                 type: "warning",
@@ -92,7 +107,7 @@ $scope.RefreshList=function(){
                     }
                 );
 
-            });
+            });*/
 // are you sure
 
     }
