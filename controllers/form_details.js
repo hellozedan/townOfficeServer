@@ -72,9 +72,9 @@ module.exports = function (FormDetails) {
         },
         getFormByQuery: function (req, res) {
             var query={};
-            if(req.query.name){
+           /* if(req.query.name){
                 query.name={ "$regex": req.query.gosh, "$options": "i" };
-            }
+            }*/
             if(req.query.gosh){
                 query.gosh={ "$regex": req.query.gosh, "$options": "i" };
             }
@@ -87,7 +87,7 @@ module.exports = function (FormDetails) {
             if(req.query.megrash){
                 query.megrash= { "$regex": req.query.megrash, "$options": "i" };
             }
-            if(req.query.type){
+            if(req.query.type && req.query.type!="none"  ){
                 query.type= req.query.type;
             }
 

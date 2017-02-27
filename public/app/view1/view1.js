@@ -21,6 +21,7 @@ function View1Ctrl($scope,FormDetailsService,ngNotify,UserDetailsService){
 
 
     $scope.query={};
+    $scope.filterName="";
     $scope.query.type="none";
     $scope.query.gosh="";
     $scope.query.helka="";
@@ -42,9 +43,14 @@ $scope.RefreshList=function(){
 
         if(  ($scope.query.type=="none" ||$scope.query.type=="") && $scope.query.name=="" &&  $scope.query.gosh=="" &&  $scope.query.helka==""&& $scope.query.megrash==""){
             //notification to choose one
+
             ngNotify.set('הזן נתונים לחיפוש', 'error');
         }else{
-
+            if($scope.query.name!=""){
+                $scope.filterName=$scope.query.name;
+            }else{
+                $scope.filterName="";
+            }
              FormDetailsService.getFormByQuery($scope.query).then(function (result) {
                  $scope.forms_list=result;
              }, function (err) {
@@ -56,6 +62,7 @@ $scope.RefreshList=function(){
     $scope.clearSearch=function () {
 
         $scope.query={};
+        $scope.filterName="";
         $scope.query.name="";
         $scope.query.gosh="";
         $scope.query.helka="";

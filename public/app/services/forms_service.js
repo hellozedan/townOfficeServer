@@ -128,7 +128,7 @@ function FormDetailsService($http, $q) {
 
           url += 'name=' + query.name+ '&gosh=' + query.gosh+'&helka=' + query.helka+ '&megrash=' + query.megrash + '&type=' + query.type;
 
-      console.log(apiBase+'form_details/getFormByQuery' + url);
+
     $http.get(apiBase+'form_details/getFormByQuery' + url)
         .success(function (data) {
           deferred.resolve(data);
