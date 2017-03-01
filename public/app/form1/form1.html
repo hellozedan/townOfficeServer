@@ -20,22 +20,24 @@
 
     <div id="no" class="main-page">
         <image class="logo-town" src="components/images/logo_handasa.png" alt="Logo View"></image>
-<div>
+
         <div class="date-label">
             <label> תאריך </label>
-            <input type="date" ng-model="form1.date" >
+            <input type="date" ng-model="form1.date" class="input-date" >
         </div>
 
 
         <div class="dearSir">
             <label>
-                לכבוד : <input class="input-to-form" type="text" ng-model="form1.name">
+
+                לכבוד : <!--<input class="input-to-form" type="text" ng-model="form1.name" disabled>-->
+                {{form1.name}}
 
             </label>
             <br>
             <label>
 
-                א.נ,
+                א.נ.
             </label>
         </div>
         <label class="center-title-label">
@@ -50,22 +52,31 @@
             </b>
         </label>
 
-        <div class="paregraph">
+        <div class="paregraph" ng-if="form1.isOld=='true'">
 
 
-            הריני לאשר בזאת שעל המבנה הקיים בשטח הבנוי / בגוש
-            <input class="input-to-form"type="text" ng-model="form1.gosh">
-
-            חלקה
-
-            <input class="input-to-form" type="text" ng-model="form1.helka">
-
-
-            מגרש
-            <input class="input-to-form" type="text" ng-model="form1.megrash">
+            הריני לאשר בזאת שעל המבנה הקיים בשטח הבנוי
 
             קיימים חיובי רשת מים לפי הפירוט הבא:
         </div>
+
+    <div class="paregraph" ng-if="form1.isOld=='false'">
+
+
+        הריני לאשר בזאת שעל המבנה הקיים בגוש
+        <input class="input-to-form input-gosh"type="text" ng-model="form1.gosh">
+
+        חלקה
+
+        <input class="input-to-form input-helka" type="text" ng-model="form1.helka">
+
+        <!-- &nbsp; &nbsp;-->
+        <br>
+        מגרש
+        <input class="input-to-form input-megrash" type="text" ng-model="form1.megrash">
+
+        קיימים חיובי רשת מים לפי הפירוט הבא:
+    </div>
 
         <div>
             <table class="table table-bordered">
@@ -76,9 +87,9 @@
                     <th> ת.ז</th>
                     <th> תאריך החיוב</th>
                     <th>שטח בניה במ"ר</th>
-                    <th> מס' חיבורים</th>
                     <th> שטח אדמה במ"ר</th>
-                  <th>סכום החיוב ₪ \ לירות </th>
+                    <th> מס' חיבורים</th>
+                  <th>סכום החיוב </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -127,10 +138,16 @@
         </div>
 
         <label class="end_paregraph">יש לציין שכל החיובים הנ"ל בוצעו במועצה מקומית כפר יאסיף. </label>
+<br>
+        <button class="no-print add-remove-note btn btn-success btn-lg " ng-click="addRemoveNote(true)" ng-if="!form1.note.isNote">הוספת הערה</button>
+        <button class="no-print add-remove-note btn btn-danger btn-lg " ng-click="addRemoveNote(false)" ng-if="form1.note.isNote">הוספת הערה</button>
+        <br>     <br>
+        <textarea class="note-for-form" ng-model="form1.note.noteText"  ng-if="form1.note.isNote">
 
+        </textarea>
 
         <p class="sincerely">
-            בכבוד רב,
+            בכבוד רב
             <br>
             מהנדס המועצה
             <br>

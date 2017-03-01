@@ -90,6 +90,9 @@ module.exports = function (FormDetails) {
             if(req.query.type && req.query.type!="none"  ){
                 query.type= req.query.type;
             }
+            if(req.query.isOld && req.query.isOld!="none"  ){
+                query.isOld= req.query.isOld;
+            }
 
             FormDetails.find(query).sort({'create_date': 'descending'}).exec(query, function (err, docs) {
                 if (err) {

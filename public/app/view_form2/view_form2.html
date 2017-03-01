@@ -39,7 +39,7 @@
             <br>
             <label>
 
-                א.נ,
+                א.נ.
             </label>
         </div>
         <label class="center-title-label">
@@ -53,20 +53,26 @@
             </u>
             </b>
         </label>
+        <div class="paregraph" ng-if="form1.isOld=='true'">
 
-        <div class="paregraph">
+
+            הריני לאשר בזאת שעל המבנה הקיים בשטח הבנוי
+
+            קיימים חיובי רשת מים לפי הפירוט הבא:
+        </div>
+        <div class="paregraph" ng-if="form1.isOld=='false'">
 
 
             הריני לאשר בזאת שעל המבנה הקיים בשטח הבנוי / בגוש
-            <input class="input-to-form"type="text" ng-model="form1.gosh" disabled>
+            <input class="input-to-form input-gosh"type="text" ng-model="form1.gosh" disabled>
 
             חלקה
 
-            <input class="input-to-form" type="text" ng-model="form1.helka" disabled>
+            <input class="input-to-form input-helka" type="text" ng-model="form1.helka" disabled>
 
 
             מגרש
-            <input class="input-to-form" type="text" ng-model="form1.megrash" disabled>
+            <input class="input-to-form input-megrash" type="text" ng-model="form1.megrash" disabled>
 
             קיימים חיובי רשת ביוב לפי הפירוט הבא:
 
@@ -150,10 +156,14 @@
         </div>
 
         <label class="end_paregraph">יש לציין שכל החיובים הנ"ל בוצעו במועצה מקומית כפר יאסיף. </label>
+        <br><br>
 
+        <p ng-if="form1.note.isNote">
+            {{form1.note.noteText}}
+        </p>
 
         <p class="sincerely">
-            בכבוד רב,
+            בכבוד רב
             <br>
             מהנדס המועצה
             <br>

@@ -23,19 +23,21 @@
 
         <div class="date-label">
             <label> תאריך </label>
-            <input type="date" ng-model="form1.date" >
+            <input type="date" ng-model="form1.date" class="input-date" >
         </div>
 
 
         <div class="dearSir">
             <label>
-                לכבוד : <input class="input-to-form" type="text" ng-model="form1.name">
+                לכבוד : <!--<input class="input-to-form" type="text" ng-model="form1.name" disabled>-->
+                {{form1.name}}
+
 
             </label>
             <br>
             <label>
 
-                א.נ,
+                א.נ.
             </label>
         </div>
         <label class="center-title-label">
@@ -45,24 +47,29 @@
 
                 אישור חיובי רשת ביוב
 
-
             </u>
             </b>
         </label>
+        <div class="paregraph" ng-if="form1.isOld=='true'">
 
-        <div class="paregraph">
+
+            הריני לאשר בזאת שעל המבנה הקיים בשטח הבנוי
+
+            קיימים חיובי רשת מים לפי הפירוט הבא:
+        </div>
+        <div class="paregraph" ng-if="form1.isOld=='false'">
 
 
-            הריני לאשר בזאת שעל המבנה הקיים בשטח הבנוי / בגוש
-            <input class="input-to-form"type="text" ng-model="form1.gosh">
+            הריני לאשר בזאת שעל המבנה הקיים    בגוש
+            <input class="input-to-form input-gosh"type="text" ng-model="form1.gosh">
 
             חלקה
 
-            <input class="input-to-form" type="text" ng-model="form1.helka">
+            <input class="input-to-form input-helka" type="text" ng-model="form1.helka">
 
 
             מגרש
-            <input class="input-to-form" type="text" ng-model="form1.megrash">
+            <input class="input-to-form input-megrash" type="text" ng-model="form1.megrash">
 
             קיימים חיובי רשת ביוב לפי הפירוט הבא:
 
@@ -128,10 +135,16 @@
         </div>
 
         <label class="end_paregraph">יש לציין שכל החיובים הנ"ל בוצעו במועצה מקומית כפר יאסיף. </label>
+        <br>
+        <button class="no-print add-remove-note btn btn-success btn-lg " ng-click="addRemoveNote(true)" ng-if="!form1.note.isNote">הוספת הערה</button>
+        <button class="no-print add-remove-note btn btn-danger btn-lg " ng-click="addRemoveNote(false)" ng-if="form1.note.isNote">הוספת הערה</button>
+        <br>     <br>
+        <textarea class="note-for-form" ng-model="form1.note.noteText"  ng-if="form1.note.isNote">
 
+        </textarea>
 
         <p class="sincerely">
-            בכבוד רב,
+            בכבוד רב
             <br>
             מהנדס המועצה
             <br>
@@ -148,34 +161,3 @@
     </div>
 </div>
 
-<style>
-
-    /* .table th:hover {
-         text-decoration: underline;
-         cursor: pointer;
-     }
-
-     .table .action-column {
-         width: 230px;
-     }
-
-     .table .action-column:hover {
-         text-decoration: none;
-         cursor: default;
-     }
-
-     .table tfoot .pagination {
-         float: right;
-         margin: 0;
-     }
-
-     .table tfoot .pagination li {
-         cursor: pointer;
-     }
-
-     .table tfoot select {
-         width: 90px;
-         float: right;
-         margin-right: 8px;
-     }*/
-</style>

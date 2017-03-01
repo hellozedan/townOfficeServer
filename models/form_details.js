@@ -7,7 +7,13 @@ var form_details = new mongoose.Schema({
 
     order: Number,
     type: { type: String},
+    isOld: { type: Boolean},
     type_he: { type: String},
+
+    note: {
+        isNote:Boolean,
+        noteText:String
+    },
     active: {type:Boolean, default:true},
     gosh:{type:String},
     helka:{type:String},

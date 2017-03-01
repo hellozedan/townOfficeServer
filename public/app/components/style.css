@@ -19,7 +19,16 @@ body{
     {
         resize: none;
         overflow:hidden !important;
+        border: 0 !important;
     }
+
+    input {
+        border: 0 !important;
+        outline: 0 !important;
+
+    }
+
+
 }
 .main-page{
     font-family: "Times New Roman", Georgia, Serif;
@@ -82,8 +91,19 @@ td {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    margin-top: 25px;
 }
 
+.input-gosh {
+    width: 300px !important;
+}
+.input-helka{
+    width: 300px !important;
+}
+
+.input-megrash{
+    width: 375px !important;
+}
 
 .sincerely{
 
@@ -114,7 +134,12 @@ input {
     outline: 0;
     background: transparent;
     border-bottom: 1px solid black;
-    text-align: center;
+    text-align: right;
+}
+
+.input-date{
+    border: 0 !important;
+    outline: 0 !important;
 }
 
 
@@ -151,6 +176,13 @@ th {
     zoom: 200%;
 
 }
+.add-remove-note{
+    float: right;
+    margin-top: 25px;
+    margin-left: 20px;
+    zoom: 200%;
+
+}
 
 .end_paregraph{
     margin-top: 50px;
@@ -168,16 +200,15 @@ th {
 }
 
 
-textarea {
+.input-in-table {
     max-width: 318px;
     font-size: 52px !important;
-
-
 }
 
 
 .input-to-form{
-    width: 500px;
+   /* width: 500px;*/
+    padding-right: 20px;
 }
 
 .clickable{
@@ -233,4 +264,16 @@ textarea {
     padding-bottom: 1px !important;
     margin-left: 10px !important;
 
+}
+
+
+.note-for-form{
+    width: 1700px;
+    padding: 3px;
+
+}
+
+.search-area{
+    left: 25%;
+    position: relative;
 }

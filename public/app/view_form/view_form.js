@@ -34,6 +34,7 @@ function FormViewCtrl($scope,FormDetailsService,UserDetailsService) {
             if (result != null) {
                 $scope.form1 = result;
                 $scope.form1.date=new Date(result.date);
+
             }
         }, function (err) {
         }

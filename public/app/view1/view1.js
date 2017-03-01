@@ -16,6 +16,8 @@ angular.module('myApp.view1', ['ngRoute'])
 function View1Ctrl($scope,FormDetailsService,ngNotify,UserDetailsService){
 
     UserDetailsService.ReloadPage();
+
+
       $scope.forms_list=[
       ];
 
@@ -27,6 +29,8 @@ function View1Ctrl($scope,FormDetailsService,ngNotify,UserDetailsService){
     $scope.query.helka="";
     $scope.query.megrash="";
     $scope.query.name="";
+    $scope.query.id="";
+    $scope.query.isOld="none";
 $scope.RefreshList=function(){
         FormDetailsService.getLast10Forms().then(function (result) {
                 if (result != null) {
@@ -41,7 +45,7 @@ $scope.RefreshList=function(){
 
     $scope.goSearchBy=function () {
 
-        if(  ($scope.query.type=="none" ||$scope.query.type=="") && $scope.query.name=="" &&  $scope.query.gosh=="" &&  $scope.query.helka==""&& $scope.query.megrash==""){
+        if($scope.query.name=="" && $scope.query.id=="" &&  $scope.query.gosh=="" &&  $scope.query.helka==""&& $scope.query.megrash==""){
             //notification to choose one
 
             ngNotify.set('הזן נתונים לחיפוש', 'error');
@@ -50,6 +54,12 @@ $scope.RefreshList=function(){
                 $scope.filterName=$scope.query.name;
             }else{
                 $scope.filterName="";
+            }
+
+            if($scope.query.id!=""){
+                $scope.filterId=$scope.query.id;
+            }else{
+                $scope.filterId="";
             }
              FormDetailsService.getFormByQuery($scope.query).then(function (result) {
                  $scope.forms_list=result;
@@ -63,20 +73,24 @@ $scope.RefreshList=function(){
 
         $scope.query={};
         $scope.filterName="";
+        $scope.filterId="";
         $scope.query.name="";
         $scope.query.gosh="";
         $scope.query.helka="";
         $scope.query.megrash="";
         $scope.query.type="none";
+        $scope.query.isOld="none";
     }
 
 
     $scope.OpenForm=function(type,_id){
+        var url;
         if(type=='water'){
-            var url="#!/view_form?";
+             url="#!/view_form?";
         }else{
-            var url="#!/view_form2?";
+             url="#!/view_form2?";
         }
+
         window.open(url+"id="+_id);
     }
     $scope.deleteFormById=function(_id){
