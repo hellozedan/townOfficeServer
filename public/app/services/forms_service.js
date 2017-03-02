@@ -20,8 +20,8 @@ function FormDetailsService($http, $q) {
 
     var apiBase='https://townoffices.herokuapp.com/api/';
 
-    /* var  apiBase= 'http://localhost:3000/api/';*/
-    /* var  apiBase= 'http://localhost:3000/api/';*/
+  /*   var  apiBase= 'http://localhost:3000/api/';*/
+
   return ({
     create: create,
     edit:edit,
@@ -128,7 +128,7 @@ function FormDetailsService($http, $q) {
 
       var url="?";
 
-          url += 'name=' + query.name+ '&gosh=' + query.gosh+'&helka=' + query.helka+ '&megrash=' + query.megrash + '&type=' + query.type + '&isOld=' + query.isOld;
+          url += 'name=' + query.name+ '&gosh=' + query.gosh+'&helka=' + query.helka+ '&megrash=' + query.megrash + '&type=' + query.type + '&isOld=' + query.isOld + '&id=' + query.id;
 
 
     $http.get(apiBase+'form_details/getFormByQuery' + url)

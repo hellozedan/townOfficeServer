@@ -76,16 +76,16 @@ module.exports = function (FormDetails) {
                 query.name={ "$regex": req.query.gosh, "$options": "i" };
             }*/
             if(req.query.gosh){
-                query.gosh={ "$regex": req.query.gosh, "$options": "i" };
+                query.gosh=req.query.gosh ;
             }
 
             if(req.query.helka){
-                query.helka={ "$regex":  req.query.helka, "$options": "i" };
+                query.helka=req.query.helka;
 
             }
 
             if(req.query.megrash){
-                query.megrash= { "$regex": req.query.megrash, "$options": "i" };
+                query.megrash= req.query.megrash;
             }
             if(req.query.type && req.query.type!="none"  ){
                 query.type= req.query.type;
@@ -93,13 +93,59 @@ module.exports = function (FormDetails) {
             if(req.query.isOld && req.query.isOld!="none"  ){
                 query.isOld= req.query.isOld;
             }
+            var result=[];
+            var found=false;
+            var find_id=false;
+            var find_name=false;
+            if(req.query.name && req.query.name!=""){
+                find_name=true;
+            }
+            if(req.query.id && req.query.id!=""){
+                find_id=true;
+            }
 
             FormDetails.find(query).sort({'create_date': 'descending'}).exec(query, function (err, docs) {
                 if (err) {
                     console.log(err);
                     res.status(500).json(err);
                 } else {
-                    res.status(200).json(docs);
+                    if(find_name || find_id){
+                        for(var i=0;i<docs.length;i++){
+                            found=false;
+                                for(var j=0;j<docs[i].table_details.length && found==false;j++){
+
+                                    if(find_name && find_id){
+                                        if(docs[i].table_details[j].col1.includes(req.query.name) && docs[i].table_details[j].col2==req.query.id){
+                                            result.push(docs[i]);
+                                            found=true;
+                                        }
+
+                                    }else if(find_name){
+                                        if(docs[i].table_details[j].col1.includes(req.query.name)){
+                                            result.push(docs[i]);
+                                            found=true;
+                                        }
+                                    }
+                                    else if(find_id){
+                                        if(docs[i].table_details[j].col2==req.query.id){
+                                            result.push(docs[i]);
+                                            found=true;
+                                        }
+                                    }
+
+
+                                }
+
+                        }
+                        res.status(200).json(result);
+
+                    }
+                    else{
+                        res.status(200).json(docs);
+                    }
+
+
+
                 }
             });
         },

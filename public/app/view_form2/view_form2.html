@@ -158,8 +158,8 @@
         <label class="end_paregraph">יש לציין שכל החיובים הנ"ל בוצעו במועצה מקומית כפר יאסיף. </label>
         <br><br>
 
-        <p ng-if="form1.note.isNote">
-            {{form1.note.noteText}}
+        <p ng-if="form1.note.isNote" ng-bind-template="form1.note.noteText">
+
         </p>
 
         <p class="sincerely">

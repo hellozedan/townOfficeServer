@@ -50,7 +50,7 @@ $scope.RefreshList=function(){
 
             ngNotify.set('הזן נתונים לחיפוש', 'error');
         }else{
-            if($scope.query.name!=""){
+          /*  if($scope.query.name!=""){
                 $scope.filterName=$scope.query.name;
             }else{
                 $scope.filterName="";
@@ -60,7 +60,7 @@ $scope.RefreshList=function(){
                 $scope.filterId=$scope.query.id;
             }else{
                 $scope.filterId="";
-            }
+            }*/
              FormDetailsService.getFormByQuery($scope.query).then(function (result) {
                  $scope.forms_list=result;
              }, function (err) {
