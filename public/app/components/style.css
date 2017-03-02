@@ -28,6 +28,15 @@ body{
 
     }
 
+    .date-label-for-print{
+        display:inline !important; ;
+    }
+
+    .input-date{
+       display: none;
+    }
+
+
 
 }
 .main-page{
@@ -95,14 +104,14 @@ td {
 }
 
 .input-gosh {
-    width: 300px !important;
+    width: 250px !important;
 }
 .input-helka{
-    width: 300px !important;
+    width: 250px !important;
 }
 
 .input-megrash{
-    width: 375px !important;
+    width: 350px !important;
 }
 
 .sincerely{
@@ -276,4 +285,9 @@ th {
 .search-area{
     left: 25%;
     position: relative;
+}
+
+.date-label-for-print{
+    display:none;
+    font-weight: 500 !important;
 }

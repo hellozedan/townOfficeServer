@@ -45,7 +45,7 @@ $scope.RefreshList=function(){
 
     $scope.goSearchBy=function () {
 
-        if($scope.query.name=="" && $scope.query.id=="" &&  $scope.query.gosh=="" &&  $scope.query.helka==""&& $scope.query.megrash==""){
+        if(($scope.query.type=="none" ||$scope.query.type=="") && ($scope.query.isOld=="none" ||$scope.query.isOld=="") && $scope.query.name=="" && $scope.query.id=="" &&  $scope.query.gosh=="" &&  $scope.query.helka==""&& $scope.query.megrash==""){
             //notification to choose one
 
             ngNotify.set('הזן נתונים לחיפוש', 'error');
