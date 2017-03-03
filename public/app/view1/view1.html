@@ -110,6 +110,7 @@
             <span style="font-weight: bold; font-size:13px; float: left;">{{form.date | date:"MM/dd/yyyy"}}
             </span>
             <br>
+            <div ng-if="!form.isOld">
             <span>
          <span class="blue">  גוש</span>
             {{form.gosh}}
@@ -124,7 +125,11 @@
              <span class="blue">  מגרש</span>
             {{form.megrash}}
     </span>
+            </div>
 
+            <div ng-if="form.isOld">
+                <span class="blue">  שטח בנוי</span>
+            </div>
 
         </div>
 
