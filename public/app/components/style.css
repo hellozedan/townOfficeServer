@@ -1,5 +1,5 @@
 body{
-    font-family: "Times New Roman", Georgia, Serif;
+    font-family: 'David';
     background-color:  rgba(221, 221, 221, 0.45)!important;
 }
 
@@ -27,7 +27,9 @@ body{
         outline: 0 !important;
 
     }
-
+    .main-page{
+        border: 0 !important;
+    }
     .date-label-for-print{
         display:inline !important; ;
     }
@@ -40,14 +42,18 @@ body{
 
 }
 .main-page{
-    font-family: "Times New Roman", Georgia, Serif;
+ /*   font-family: "Times New Roman", Georgia, Serif;*/
+    border: solid;
+    font-family: 'David';
+    font-weight: bold;
+    lang:"he";
     width: 2480px;
     height: 3508px;
     margin: 0 auto;
     position: relative;
     background-color: white;
     padding: 20px 70px 10px;
-    font-size: 70px;
+    font-size: 70px !important;
 
     zoom: 30%;
 }
@@ -104,10 +110,10 @@ td {
 }
 
 .input-gosh {
-    width: 250px !important;
+    width: 190px !important;
 }
 .input-helka{
-    width: 250px !important;
+    width: 240px !important;
 }
 
 .input-megrash{
@@ -117,7 +123,7 @@ td {
 .sincerely{
 
     position: absolute;
-    bottom: 150px;
+    bottom: 230px;
 
 
     text-align: center;
@@ -160,6 +166,7 @@ th {
 .input-in-table{
     border: 0;
     outline: 0;
+    font-weight: normal;
 
 }
 
@@ -190,6 +197,7 @@ th {
     margin-top: 25px;
     margin-left: 20px;
     zoom: 200%;
+    font-size: 35% !important;
 
 }
 
