@@ -161,6 +161,8 @@ input {
 th {
 
     text-align: center !important;
+    font-size: 59px !important;
+
 }
 
 .input-in-table{
@@ -220,6 +222,7 @@ th {
 .input-in-table {
     max-width: 318px;
     font-size: 52px !important;
+    font-weight: bold;
 }
 
 
