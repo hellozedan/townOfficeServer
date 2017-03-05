@@ -53,7 +53,7 @@ body{
     position: relative;
     background-color: white;
     padding: 20px 70px 10px;
-    font-size: 70px !important;
+    font-size: 66px !important;
 
     zoom: 30%;
 }
@@ -110,10 +110,10 @@ td {
 }
 
 .input-gosh {
-    width: 190px !important;
+    width: 250px !important;
 }
 .input-helka{
-    width: 240px !important;
+    width: 250px !important;
 }
 
 .input-megrash{
