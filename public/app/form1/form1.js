@@ -110,5 +110,12 @@ function Form1Ctrl($scope,FormDetailsService,ngNotify,UserDetailsService) {
             }
         );
     }
+
+    $scope.replaceShekel=function(row){
+            var str = row.col7;
+            var res = str.replace(/ש"ח/g, "₪");
+        row.col7=res;
+            document.getElementById("demo").innerHTML = res;
+    }
 }
 
