@@ -22,7 +22,7 @@
         <image class="logo-town" src="components/images/logo_handasa.png" alt="Logo View"></image>
 
         <div class="date-label">
-            <label> תאריך </label>
+            <!--<label> תאריך </label>-->
             {{form1.date | date:"MM/dd/yyyy"}}
 
 
@@ -32,11 +32,11 @@
         <div class="dearSir">
             <label>
 
-                לכבוד : <!--<input class="input-to-form" type="text" ng-model="form1.name" disabled>-->
+                לכבוד  <!--<input class="input-to-form" type="text" ng-model="form1.name" disabled>-->
                 {{form1.name}}
 
             </label>
-            <br>
+            <div style="height: 63px;"></div>
             <label>
 
                 א.נ.
@@ -73,7 +73,7 @@
 
             מגרש
             <input class="input-to-form input-megrash" type="text" ng-model="form1.megrash" disabled>
-
+            <br>
             קיימים חיובי רשת ביוב לפי הפירוט הבא:
 
         </div>
@@ -86,9 +86,8 @@
                     <th> חיוב על שם</th>
                     <th> ת.ז</th>
                     <th> תאריך החיוב</th>
-                    <th>שטח בניה במ"ר</th>
-                    <!-- <th> מס' יעבורים</th>-->
-                    <th> שטח אדמה במ"ר</th>
+                    <th>שטח בניה </th>
+                    <th> שטח אדמה </th>
                     <th> סכום החיוב ₪</th>
                 </tr>
                 </thead>
@@ -97,26 +96,26 @@
 
                     <td >
 
-                        <p >
+                        <p class="label-in-table">
                             {{row.col1}}
                         </p>
 
                     </td>
 
                     <td>
-                        <p>
+                        <p class="label-in-table">
                             {{row.col2}}
                         </p>
 
                     </td>
                     <td>
-                        <p>
+                        <p class="label-in-table">
                             {{row.col3}}
                         </p>
 
                     </td>
                     <td>
-                        <p>
+                        <p class="label-in-table">
                             {{row.col4}}
                         </p>
 
@@ -128,13 +127,13 @@
 
                     </td>-->
                     <td>
-                        <p>
+                        <p class="label-in-table">
                             {{row.col6}}
                         </p>
 
                     </td>
                     <td>
-                        <p>
+                        <p class="label-in-table">
                             {{row.col7}}
                         </p>
 

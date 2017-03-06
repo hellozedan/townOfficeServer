@@ -22,7 +22,7 @@
         <image class="logo-town" src="components/images/logo_handasa.png" alt="Logo View"></image>
 
         <div class="date-label">
-            <label> תאריך </label>
+            <!--<label> תאריך </label>-->
             <input type="date" ng-model="form1.date" class="input-date" >
             <label class="date-label-for-print" > {{form1.date | date:'MM/dd/yyyy'}}</label>
         </div>
@@ -31,11 +31,11 @@
         <div class="dearSir">
             <label>
 
-                לכבוד : <!--<input class="input-to-form" type="text" ng-model="form1.name" disabled>-->
+                לכבוד  <!--<input class="input-to-form" type="text" ng-model="form1.name" disabled>-->
                 {{form1.name}}
 
             </label>
-            <br>
+            <div style="height: 63px;"></div>
             <label>
 
                 א.נ.
@@ -75,7 +75,7 @@
 
         מגרש
         <input class="input-to-form input-megrash" type="text" ng-model="form1.megrash">
-
+<br>
         קיימים חיובי רשת מים לפי הפירוט הבא:
     </div>
 
@@ -87,8 +87,8 @@
                     <th> חיוב על שם</th>
                     <th> ת.ז</th>
                     <th> תאריך החיוב</th>
-                    <th>שטח בניה במ"ר</th>
-                    <th> שטח אדמה במ"ר</th>
+                    <th>שטח בניה </th>
+                    <th> שטח אדמה </th>
                     <th> מס' חיבורים</th>
                   <th>סכום החיוב </th>
                 </tr>
@@ -97,11 +97,11 @@
                 <tr ng-repeat="row in form1.table_details">
 
                     <td>
-                        <textarea rows="2"  class="input-in-table" ng-model="row.col1"> </textarea>
+                        <textarea rows="2"  class="input-in-table name-input-form1" ng-model="row.col1"> </textarea>
                     </td>
 
                     <td>
-                        <textarea rows="2" class="input-in-table" ng-model="row.col2"> </textarea>
+                        <textarea rows="2" class="input-in-table id-input-form1" ng-model="row.col2"> </textarea>
                     </td>
 
                     <td>
@@ -117,7 +117,7 @@
                     </td>
 
                     <td>
-                        <textarea rows="2"  class="input-in-table" ng-model="row.col6"> </textarea>
+                        <textarea rows="2"  class="input-in-table small-number-input-form1" ng-model="row.col6"> </textarea>
                     </td>
 
                     <td>

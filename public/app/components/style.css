@@ -22,11 +22,11 @@ body{
         border: 0 !important;
     }
 
-    input {
+    /*input {
         border: 0 !important;
         outline: 0 !important;
 
-    }
+    }*/
     .main-page{
         border: 0 !important;
     }
@@ -110,14 +110,17 @@ td {
 }
 
 .input-gosh {
-    width: 250px !important;
+    width: 180px !important;
+    text-align: center;
 }
 .input-helka{
-    width: 250px !important;
+    width: 208px !important;
+    text-align: center;
 }
 
 .input-megrash{
-    width: 350px !important;
+    width: 208px !important;
+    text-align: center;
 }
 
 .sincerely{
@@ -153,10 +156,14 @@ input {
 }
 
 .input-date{
-    border: 0 !important;
+    border: 0;
     outline: 0 !important;
+    border-bottom: 1px solid black  !important;
 }
 
+.half-br{
+    line-height: 50%;
+}
 
 th {
 
@@ -169,6 +176,7 @@ th {
     border: 0;
     outline: 0;
     font-weight: normal;
+    text-align: center;
 
 }
 
@@ -261,8 +269,9 @@ th {
 
 .row-in-table-view td p{
     min-height: 154px;
-    max-width: 318px;
+    max-width: 475px;
     font-size: 52px !important;
+    text-align: center;
 }
 
 
@@ -300,5 +309,31 @@ th {
 
 .date-label-for-print{
     display:none;
-    font-weight: 500 !important;
+
+    border-bottom: 1px solid black;
+
 }
+
+.label-in-table{
+    text-align: center;
+}
+
+.name-input-form1{
+    max-width: 476px;
+}
+
+.id-input-form1{
+    max-width: 258px;
+}
+
+.small-number-input-form1{
+    max-width: 197px;
+}
+.name-input-form2{
+    max-width: 552px;
+}
+
+.id-input-form2{
+    max-width: 272px;
+}
+
