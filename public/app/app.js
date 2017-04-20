@@ -10,6 +10,8 @@ angular.module('myApp', [
   'myApp.view_form2',
   'myApp.version',
   'myApp.form1',
+  'myApp.edit_form1',
+  'myApp.edit_form2',
   'myApp.form2',
   'login'
 ])

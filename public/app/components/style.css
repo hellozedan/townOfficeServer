@@ -283,7 +283,13 @@ th {
 
 .delete-form{
     float: left;
-    margin-left: 130px;
+    margin-left: 100px;
+    margin-top: 19px;
+}
+
+.edit-form{
+
+    margin-left: 7px;
     margin-top: 19px;
 }
 

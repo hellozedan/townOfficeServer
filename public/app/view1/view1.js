@@ -93,6 +93,20 @@ $scope.RefreshList=function(){
 
         window.open(url+"id="+_id);
     }
+
+
+    $scope.editFormById=function(type,_id){
+        var url;
+        if(type=='water'){
+            url="#!/edit_form1?";
+        }else{
+            url="#!/edit_form2?";
+        }
+
+        window.open(url+"id="+_id);
+    }
+
+
     $scope.deleteFormById=function(_id){
 
 
@@ -132,6 +146,7 @@ $scope.RefreshList=function(){
 // are you sure
 
     }
+
 
     $scope.RefreshList();
 };

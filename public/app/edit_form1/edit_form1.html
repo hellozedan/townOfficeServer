@@ -1,0 +1,166 @@
+<!--<p id="ignorePDF">don't print this to pdf</p>-->
+<div>
+    <div class="no-print" style="height: 10px;">
+
+    </div>
+    <nav class="navbar navbar-inverse navbar-fixed-bottom no-print">
+        <div class="container-fluid">
+
+            <button ng-click="printPage()" class="btn btn-info navbar-btn no-print"><span
+                    class="glyphicon glyphicon-print"></span> &nbsp;הדפס
+            </button>
+
+            <button ng-click="saveChangesForm()" class="btn btn-danger navbar-btn"><span
+                    class="glyphicon glyphicon-save"></span> &nbsp; שמור שינויים
+            </button>
+
+        </div>
+    </nav>
+
+
+    <div id="no" class="main-page">
+        <image class="logo-town" src="components/images/logo_handasa.png" alt="Logo View"></image>
+
+        <div class="date-label">
+            <!--<label> תאריך </label>-->
+            <input type="date" ng-model="form1.date" class="input-date" >
+            <label class="date-label-for-print" > {{form1.date |date:"dd/MM/yyyy"}}</label>
+        </div>
+
+
+        <div class="dearSir">
+            <label>
+
+                לכבוד  <!--<input class="input-to-form" type="text" ng-model="form1.name" disabled>-->
+                {{form1.name}}
+
+            </label>
+            <div style="height: 63px;"></div>
+            <label>
+
+                א.נ.
+            </label>
+        </div>
+        <label class="center-title-label">
+            הנדון :
+
+            <b> <u>
+
+                אישור חיובי רשת מים
+
+
+            </u>
+            </b>
+        </label>
+
+        <div class="paregraph" ng-if="form1.isOld==true">
+
+
+            הריני לאשר בזאת שעל המבנה הקיים בשטח הבנוי
+
+            קיימים חיובי רשת מים לפי הפירוט הבא:
+        </div>
+
+    <div class="paregraph" ng-if="form1.isOld==false">
+
+
+        הריני לאשר בזאת שעל המבנה הקיים בגוש
+        <input class="input-to-form input-gosh"type="text" ng-model="form1.gosh">
+
+        חלקה
+
+        <input class="input-to-form input-helka" type="text" ng-model="form1.helka">
+
+        <!-- &nbsp; &nbsp;-->
+
+        מגרש
+        <input class="input-to-form input-megrash" type="text" ng-model="form1.megrash">
+<br>
+        קיימים חיובי רשת מים לפי הפירוט הבא:
+    </div>
+
+        <div>
+            <table class="table table-bordered">
+
+                <thead>
+                <tr>
+                    <th> חיוב על שם</th>
+                    <th> ת.ז</th>
+                    <th> תאריך החיוב</th>
+                    <th>שטח בניה </th>
+                    <th> שטח אדמה </th>
+                    <th> מס' חיבורים</th>
+                  <th>סכום החיוב </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in form1.table_details">
+
+                    <td>
+                        <textarea rows="2"  class="input-in-table name-input-form1" ng-model="row.col1"> </textarea>
+                    </td>
+
+                    <td>
+                        <textarea rows="2" class="input-in-table id-input-form1" ng-model="row.col2"> </textarea>
+                    </td>
+
+                    <td>
+                        <textarea rows="2" class="input-in-table" ng-model="row.col3"> </textarea>
+                    </td>
+
+                    <td>
+                        <textarea rows="2"  class="input-in-table" ng-model="row.col4"> </textarea>
+                    </td>
+
+                    <td>
+                        <textarea rows="2"  class="input-in-table" ng-model="row.col5"> </textarea>
+                    </td>
+
+                    <td>
+                        <textarea rows="2"  class="input-in-table small-number-input-form1" ng-model="row.col6"> </textarea>
+                    </td>
+
+                    <td>
+                        <textarea rows="2"  class="input-in-table" ng-model="row.col7" ng-blur="replaceShekel(row);"> </textarea>
+                    </td>
+
+                </tr>
+                </tbody>
+
+
+            </table>
+         <!--   <button ng-click="removeRowFromTable()"
+                    class="no-print btn btn-danger btn-lg add-row-button"><span
+                    class="glyphicon glyphicon-minus"></span></button>-->
+            <button class="no-print add-row-button btn btn-danger btn-lg " ng-click="removeRowFromTable()"><span
+                    class="glyphicon glyphicon-minus"></span></button>
+            <button class="no-print add-row-button btn btn-success btn-lg " ng-click="addRowToTable()"><span
+                    class="glyphicon glyphicon-plus"></span></button>
+        </div>
+
+        <label class="end_paregraph">יש לציין שכל החיובים הנ"ל בוצעו במועצה מקומית כפר יאסיף. </label>
+<br>
+        <button class="no-print add-remove-note btn btn-success btn-lg " ng-click="addRemoveNote(true)" ng-if="!form1.note.isNote">הוספת הערה</button>
+        <button class="no-print add-remove-note btn btn-danger btn-lg " ng-click="addRemoveNote(false)" ng-if="form1.note.isNote">הסרת הערה</button>
+        <br>     <br>
+        <textarea class="note-for-form" ng-model="form1.note.noteText"  ng-if="form1.note.isNote">
+
+        </textarea>
+
+        <p class="sincerely">
+            בכבוד רב
+            <br>
+            מהנדס המועצה
+            <br>
+            יוסף אליאס
+            <br>
+
+        </p>
+
+</div>
+    </div>
+
+    <div class="no-print" style="height: 100px;">
+
+    </div>
+</div>
