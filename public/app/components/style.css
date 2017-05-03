@@ -49,6 +49,7 @@ body{
     lang:"he";
     width: 2480px;
     height: 3508px;
+    height: 3625px;
     margin: 0 auto;
     position: relative;
     background-color: white;
@@ -124,6 +125,17 @@ td {
 }
 
 .sincerely{
+
+    position: absolute;
+  /*  bottom: 570px;*/
+margin-top: 80px;
+
+    text-align: center;
+    left: 100px;
+}
+
+
+.sincerely-with-note{
 
     position: absolute;
     bottom: 230px;
