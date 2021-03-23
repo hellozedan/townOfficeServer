@@ -1,7 +1,7 @@
 express = require('express');
 mongoose = require('mongoose');
 autoIncrement = require('mongoose-auto-increment');
-mongoose.connect('mongodb://admin:sa1234@ds157439.mlab.com:57439/town_office');
+mongoose.connect('mongodb+srv://admin:sa1234@cluster0.2u2nv.mongodb.net/en?retryWrites=true&w=majority');
 autoIncrement.initialize(mongoose.connection);
 
 var bodyParser = require('body-parser');
