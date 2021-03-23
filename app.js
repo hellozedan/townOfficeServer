@@ -1,7 +1,12 @@
 express = require('express');
 mongoose = require('mongoose');
 autoIncrement = require('mongoose-auto-increment');
-mongoose.connect('mongodb+srv://admin:sa1234@cluster0.2u2nv.mongodb.net/en?retryWrites=true&w=majority');
+mongoose.Promise = require('bluebird');
+
+mongoose.connect('mongodb+srv://admin:sa1234@cluster0.2u2nv.mongodb.net/en?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 autoIncrement.initialize(mongoose.connection);
 
 var bodyParser = require('body-parser');
